@@ -1,8 +1,9 @@
 {
   "name": "Copy as Markdown for AI",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Convert selected HTML (tables, text) to Markdown optimized for AI agents and copy to clipboard.",
   "manifest_version": 3,
+  "author": "seion",
   "permissions": [
     "contextMenus",
     "scripting",

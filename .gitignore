@@ -1,0 +1,5 @@
+.git/
+.idea/
+.claude/
+*.zip
+.DS_Store
