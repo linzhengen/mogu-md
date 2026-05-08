@@ -71,8 +71,8 @@ Lorem ipsum dolor sit amet...
 | File | Role |
 |------|------|
 | `manifest.json` | MV3 設定、権限 |
-| `background.js` | コンテキストメニュー作成、スクリプト注入 |
-| `content.js` | 選択範囲の取得、前処理、Markdown変換、クリップボードコピー |
+| `background.js` | コンテキストメニュー作成、スクリプト注入、Gemini 連携制御 |
+| `content.js` | 選択範囲の取得、前処理、Markdown変換、クリップボードコピー、メッセージ送信 |
 | `lib/turndown.js` | Turndown ライブラリ (unpkg CDN ビルド) |
 | `lib/turndown-plugin-gfm.js` | GFM プラグイン (テーブル・打ち消し線・タスクリスト) |
 
@@ -85,6 +85,23 @@ Lorem ipsum dolor sit amet...
 ## Privacy
 
 この拡張機能は一切のデータを外部に送信しません。すべての処理はローカル（ブラウザ内）で完結します。詳細は [PRIVACY.md](PRIVACY.md) を参照ください。
+
+## Development
+
+### リリース手順
+
+```bash
+# 現在のバージョンで ZIP 作成
+./scripts/release.sh
+
+# パッチバージョンアップ + ZIP + git tag
+./scripts/release.sh --bump patch --tag
+
+# 動作確認（実際の変更なし）
+./scripts/release.sh --bump patch --tag --dry-run
+```
+
+`manifest.json` の `version` を自動更新し、ストア提出用の ZIP を作成します。オプションで git commit + tag も可能です。
 
 ## License
 
