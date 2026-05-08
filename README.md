@@ -7,6 +7,7 @@ Convert any selected HTML (tables, text, mixed content) into clean, AI-optimized
 ## Features
 
 - **Right-click to convert** — 範囲選択 → 右クリック → `Copy as Markdown for AI` で即座にMarkdown化
+- **Open in Gemini** — `Copy as Markdown & Open in Gemini` で Gemini を自動起動し、変換結果を入力欄に貼り付け
 - **Table-aware** — `rowspan` / `colspan` の結合セルを自動展開し、GFMテーブルとして整形
 - **Noise removal** — `<script>`, `<style>`, 非表示要素, ボタンなどのインタラクティブ要素を自動除去
 - **Absolute URLs** — 相対パスを絶対URLに変換。AIが参照先を辿れるように
@@ -30,9 +31,9 @@ Convert any selected HTML (tables, text, mixed content) into clean, AI-optimized
 ## Usage
 
 1. 任意の Web ページで変換したい範囲を選択（テーブル含む推奨）
-2. 右クリック → **Copy as Markdown for AI** を選択
+2. 右クリック → **Copy as Markdown for AI**（クリップボードにコピーのみ）または **Copy as Markdown & Open in Gemini**（コピー + Gemini 自動起動）
 3. クリップボードに Markdown がコピーされる（右下にトースト通知）
-4. ChatGPT / Claude / その他エディタに貼り付け
+4. ChatGPT / Claude / Gemini / その他エディタに貼り付け
 
 ### 出力例
 
@@ -61,6 +62,10 @@ Lorem ipsum dolor sit amet...
     2. lib/turndown-plugin-gfm.js (GFMテーブルサポート)
     3. content.js (選択範囲抽出・ノイズ除去・テーブル正規化・出力)
   → クリップボードにコピー + トースト通知
+
+[Gemini 連携時]
+  → content.js → chrome.runtime.sendMessage → background.js
+  → Gemini タブを開く → ページ読み込み完了 → 入力欄に自動貼り付け
 ```
 
 | File | Role |

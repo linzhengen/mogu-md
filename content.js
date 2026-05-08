@@ -50,6 +50,10 @@
   // ── 5. Copy to clipboard ───────────────────────────────────────
   navigator.clipboard.writeText(markdown).then(function () {
     showToast('Markdown copied to clipboard', 'success');
+    // Notify background — it will open Gemini if the user chose the Gemini menu item
+    try {
+      chrome.runtime.sendMessage({ type: 'markdown-converted', text: markdown });
+    } catch (e) { /* background may not be listening */ }
   }).catch(function (err) {
     console.error('Clipboard write failed:', err);
     showToast('Failed to copy to clipboard', 'error');
