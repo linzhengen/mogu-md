@@ -18,7 +18,7 @@ Convert any selected HTML (tables, text, mixed content) into clean, AI-optimized
 
 ### Chrome Web Store
 
-> [Chrome Web Store リンク]
+> [Chrome Web Store リンク](https://chromewebstore.google.com/detail/copy-as-markdown-for-ai/hlokilfnpkffapncbfieeenebggdenfj)
 
 ### Developer Mode (手動インストール)
 
